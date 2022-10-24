@@ -1,5 +1,4 @@
 import Image from "next/image";
-import React from "react";
 import SidebarMenuItem from "./SidebarMenuItem";
 import { HomeIcon } from "@heroicons/react/solid";
 import {
