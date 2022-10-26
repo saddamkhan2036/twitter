@@ -14,7 +14,7 @@ import {
 
 export default function Sidebar() {
   return (
-    <div className="hidden sm:flex flex-col p-2 xl:items-start fixed h-full ">
+    <div className="hidden sm:flex flex-col p-2 xl:items-start fixed h-full xl:ml-24 ">
       {/* Twitter Logo */}
       <div className="hoverEffects p-0  hover:bg-blue-100 xl:px-1">
         <Image
@@ -35,7 +35,7 @@ export default function Sidebar() {
         <SidebarMenuItem text="More" Icon={DotsCircleHorizontalIcon} />
       </div>
       {/* Button */}
-      <button className="bg-blue-400 text-white rounded-full w-56 h-12 font-bold shadow-md hover:brightness-95 text-lg hidden  xl:inline ">
+      <button className="bg-blue-400 text-white rounded-full w-56 h-12 font-bold shadow-md hover:brightness-95 text-lg hidden xl:inline ">
         Tweet
       </button>
       {/* Mini-Profile */}
