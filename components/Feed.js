@@ -22,6 +22,15 @@ export default function Feed() {
             text: "wonder full shot!",
             timestamp:" 4 hours ago"
         },
+        {
+          id: "3",
+          name: "Saddam Khan",
+          username: "yousafzai2036",
+          userImg:"https://th.bing.com/th/id/OIP.WtH2O_VTIn8pQrkDDqNNAgAAAA?pid=ImgDet&rs=1",
+          img:"https://images.unsplash.com/photo-1666644235536-b3524428b331?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1113&q=80",
+          text: "Porcupine Mountains, Carp Lake Township, MI, USA!",
+          timestamp:" 6 hours ago"
+      },
     ]
   return (
     <div className="xl:ml-[370px] border-l border-r border-gray-200 xl:min-w-[576px] sm:ml-[73px] flex-grow max-w-xl">
