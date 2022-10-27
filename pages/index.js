@@ -31,7 +31,7 @@ export async function getServerSideProps() {
   ).then((res) => res.json());
   // Who to follow section
   const randomUsersResults = await fetch(
-    "https://randomuser.me/api/?results=50&inc=name,login,picture"
+    "https://randomuser.me/api/?results=500&inc=name,login,picture"
   ).then((res) => res.json());
   return {
     props: {
