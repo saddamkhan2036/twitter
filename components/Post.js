@@ -27,7 +27,7 @@ export default function Post({ post }) {
             <span className="text-sm sm:text-[15px] hover:underline">{post.timestamp}</span>
           </div>
           {/* dot icon */}
-          <DotsHorizontalIcon class="h-10 hoverEffects w-10 hover:bg-sky-100 hover:text-sky-500 p-2 " />
+          <DotsHorizontalIcon className="h-10 hoverEffects w-10 hover:bg-sky-100 hover:text-sky-500 p-2 " />
         </div>
         {/* post text */}
         <p className="text-gray-800  text-[15px] sm:text-[16px] mb-2">{post.text}</p>

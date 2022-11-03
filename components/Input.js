@@ -1,11 +1,17 @@
 import { EmojiHappyIcon, PhotographIcon } from "@heroicons/react/outline";
+import {useSession,signOut} from "next-auth/react"
 import React from "react";
 
 export default function Input() {
+  const { data: session } = useSession();
+  console.log(session);
   return (
+    <>
+    {session && (
     <div className="flex border-b border-gray-200 p-3 space-x-3 ">
-      <img
-        src="https://th.bing.com/th/id/OIP.WtH2O_VTIn8pQrkDDqNNAgAAAA?pid=ImgDet&rs=1"
+      <img 
+      onClick={signOut}
+        src={session.user.image}
         alt="user-img"
         className="h-11 w-11 rounded-full cursor-pointer hover:brightness-95"
       />
@@ -26,5 +32,7 @@ export default function Input() {
         </div>
       </div>
     </div>
+    )}
+    </>
   );
 }

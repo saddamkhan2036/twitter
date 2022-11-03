@@ -54,8 +54,8 @@ export default function Feed() {
         </div>
       </div>
       <Input />
-      {posts.map((post) => (
-        <Post key={post.id} post={post} />
+      {posts.map((post,id) => (
+        <Post key={id} post={post} />
       ))}
     </div>
   );
