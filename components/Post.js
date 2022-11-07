@@ -56,7 +56,9 @@ export default function Post({ post }) {
   async function deletePost() {
     if (window.confirm("Are you sure you want to delete this post?")) {
       deleteDoc(doc(db, "posts", post.id)); // Delete the post from firestore
-      deleteObject(ref(storage, `posts/${post.id}/image`)); // Delete the image from storage
+      if (post.data().image) { // if post included image then delete
+        deleteObject(ref(storage, `posts/${post.id}/image`)); // Delete the image from storage
+      }
     }
   }
   return (
