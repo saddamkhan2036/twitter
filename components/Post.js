@@ -53,6 +53,8 @@ export default function Post({ post }) {
     }
   }
 
+
+  
   async function deletePost() {
     if (window.confirm("Are you sure you want to delete this post?")) {
       deleteDoc(doc(db, "posts", post.id)); // Delete the post from firestore
@@ -61,6 +63,8 @@ export default function Post({ post }) {
       }
     }
   }
+
+
   return (
     <div className="flex  p-3 cursor-pointer border-b ">
       {/* user image */}
