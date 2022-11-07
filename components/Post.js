@@ -1,6 +1,6 @@
 import {
   ChartBarIcon,
-  ChatAlt2Icon,
+  ChatIcon,
   DotsHorizontalIcon,
   HeartIcon,
   ShareIcon,
@@ -20,12 +20,15 @@ import { signIn, useSession } from "next-auth/react";
 import { useEffect, useState } from "react";
 import { info } from "autoprefixer";
 import { deleteObject, ref } from "firebase/storage";
+import {useRecoilState} from "recoil";
+import { modalState } from "../atom/modalAtom";
+
 
 export default function Post({ post }) {
   const { data: session } = useSession();
   const [likes, setLikes] = useState([]);
   const [hasLiked, setHasLiked] = useState(false);
-
+  const [open, setOpen] = useRecoilState(modalState);
   useEffect(() => {
     const unsubscribe = onSnapshot(
       collection(db, "posts", post.id, "likes"),
@@ -102,7 +105,7 @@ export default function Post({ post }) {
         <img className="rounded-2xl mr-2 " src={post.data().image} alt="" />
         {/* icons */}
         <div className="flex justify-between text-gray-500 p-2 ">
-          <ChatAlt2Icon className="h-9  w-9 hoverEffects p-2 hover:text-sky-500 hover:bg-sky-100" />
+          <ChatIcon onClick={()=>setOpen(!open)} className="h-9  w-9 hoverEffects p-2 hover:text-sky-500 hover:bg-sky-100" />
           {session?.user.uid === post?.data().id && (
             <TrashIcon
               onClick={deletePost}
