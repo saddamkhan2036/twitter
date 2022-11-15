@@ -8,8 +8,8 @@ export default function signin({ providers }) {
         className="hidden object-cover md:w-44 md:h-80 rotate-6  md:inline-flex"
       />
       <div className="">
-        {Object.values(providers).map((provider,id) => (
-          <div key={id}  className="flex flex-col items-center">
+        {Object.values(providers).map((provider) => (
+          <div key={provider.name}  className="flex flex-col items-center">
             <img
               className="w-36 object-cover"
               src="https://help.twitter.com/content/dam/help-twitter/brand/logo.png"
