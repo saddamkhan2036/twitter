@@ -5,17 +5,40 @@ import CommentModal from "../../components/CommentModal";
 import Sidebar from "../../components/Sidebar";
 import Widgets from "../../components/Widgets";
 import Post from "../../components/Post";
-import {useRouter} from "next/router"
+import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import { db } from "../../firebase";
-import { doc, onSnapshot } from "firebase/firestore";
+import {
+  collection,
+  doc,
+  onSnapshot,
+  orderBy,
+  query,
+} from "firebase/firestore";
+import Comment from "../../components/Comment";
 
 export default function PostPage({ newsResults, randomUsersResults }) {
-    const router = useRouter();
-    const {id} = router.query;
-    const [post, setPost] = useState()
+  const router = useRouter();
+  const { id } = router.query;
+  const [post, setPost] = useState();
+  const [comments, setComments] = useState([]);
 
-    useEffect(()=> onSnapshot(doc(db, "posts", id),(snapshot) => setPost(snapshot)), [db, id])
+  useEffect(
+    () => onSnapshot(doc(db, "posts", id), (snapshot) => setPost(snapshot)),
+    [db, id]
+  );
+
+  // get comments of the post
+  useEffect(() => {
+    onSnapshot(
+      query(
+        collection(db, "posts", id, "comments"),
+        orderBy("timestamp", "desc")
+      ),
+      (snapshot) => setComments(snapshot.docs)
+    );
+  }, [db, id]);
+
   return (
     <div>
       <Head>
@@ -29,7 +52,7 @@ export default function PostPage({ newsResults, randomUsersResults }) {
         {/* Feed */}
         <div className="xl:ml-[370px] border-l border-r border-gray-200 xl:min-w-[576px] sm:ml-[73px] flex-grow max-w-xl">
           <div className="flex items-center space-x-2 py-2 px-3 sticky top-0 z-50 bg-white border-b border-gray-200">
-            <div className="hoverEffects" onClick={() => router.push("/")} >
+            <div className="hoverEffects" onClick={() => router.push("/")}>
               <ArrowLeftIcon className="h-5 " />
             </div>
             <h2 className="text-lg sm:text-xl font-bold cursor-pointer ">
@@ -37,6 +60,17 @@ export default function PostPage({ newsResults, randomUsersResults }) {
             </h2>
           </div>
           <Post id={id} post={post} />
+          {comments.length > 0 && (
+            <div>
+              {comments.map((comment) => (
+                <Comment
+                  key={comment.id}
+                  id={comment.id}
+                  comment={comment.data()}
+                />
+              ))}
+            </div>
+          )}
         </div>
         {/* widgets */}
         <Widgets
