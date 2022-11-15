@@ -22,7 +22,7 @@ import { info } from "autoprefixer";
 import { deleteObject, ref } from "firebase/storage";
 import { useRecoilState } from "recoil";
 import { modalState, postIdState } from "../atom/modalAtom";
-import {useRouter} from "next/router"
+import { useRouter } from "next/router";
 
 export default function Post({ post, id }) {
   const { data: session } = useSession();
@@ -73,7 +73,7 @@ export default function Post({ post, id }) {
         // if post included image then delete
         deleteObject(ref(storage, `posts/${id}/image`)); // Delete the image from storage
       }
-      router.push("/")
+      router.push("/");
     }
   }
 
@@ -107,11 +107,19 @@ export default function Post({ post, id }) {
           <DotsHorizontalIcon className="h-10 hoverEffects w-10 hover:bg-sky-100 hover:text-sky-500 p-2 " />
         </div>
         {/* post text */}
-        <p className="text-gray-800  text-[15px] sm:text-[16px] mb-2">
+        <p
+          onClick={() => router.push(`/posts/${id}`)}
+          className="text-gray-800  text-[15px] sm:text-[16px] mb-2"
+        >
           {post?.data()?.text}
         </p>
         {/* post image */}
-        <img className="rounded-2xl mr-2 " src={post?.data()?.image} alt="" />
+        <img
+          onClick={() => router.push(`/posts/${id}`)}
+          className="rounded-2xl mr-2 "
+          src={post?.data()?.image}
+          alt=""
+        />
         {/* icons */}
         <div className="flex justify-between text-gray-500 p-2 ">
           <div className="flex items-center select-none">
