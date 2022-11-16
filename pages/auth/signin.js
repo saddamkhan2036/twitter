@@ -12,8 +12,8 @@ export default function signin({ providers }) {
           <div key={provider.name}  className="flex flex-col items-center">
             <img
               className="w-36 object-cover"
-              src="http://localhost:3000/_next/image?url=https%3A%2F%2Fstatic.wikia.nocookie.net%2Flogopedia%2Fimages%2F4%2F4c%2FPost_It.svg%2Frevision%2Flatest%2Fscale-to-width-down%2F300%3Fcb%3D20220801144311&w=128&q=75"
-              alt="Post-It logo"
+              src="https://cdn4.vectorstock.com/i/thumb-large/65/03/letter-p-blue-icon-logo-concept-design-vector-24016503.jpg"
+              alt="Post logo"
             />
             <p className="text-center text-sm italic my-10">
               This app is created for learning purposes
