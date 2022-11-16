@@ -3,17 +3,17 @@ export default function signin({ providers }) {
   return (
     <div className="flex justify-center mt-20 space-x-4">
       <img
-        src="https://cdn.cms-twdigitalassets.com/content/dam/help-twitter/en/twitter-tips/desktop-assets/ch-01/ch12findphone.png.twimg.1920.png"
-        alt="twitter image inside a phone"
-        className="hidden object-cover md:w-44 md:h-80 rotate-6  md:inline-flex"
+        src="https://cdni.iconscout.com/illustration/premium/thumb/share-post-on-social-media-5295896-4412913.png"
+        alt="postIt image inside a phone"
+        className="hidden object-cover md:w-50 md:h-80 rotate-6  md:inline-flex"
       />
       <div className="">
         {Object.values(providers).map((provider) => (
           <div key={provider.name}  className="flex flex-col items-center">
             <img
               className="w-36 object-cover"
-              src="https://help.twitter.com/content/dam/help-twitter/brand/logo.png"
-              alt="twitter logo"
+              src="http://localhost:3000/_next/image?url=https%3A%2F%2Fstatic.wikia.nocookie.net%2Flogopedia%2Fimages%2F4%2F4c%2FPost_It.svg%2Frevision%2Flatest%2Fscale-to-width-down%2F300%3Fcb%3D20220801144311&w=128&q=75"
+              alt="Post-It logo"
             />
             <p className="text-center text-sm italic my-10">
               This app is created for learning purposes

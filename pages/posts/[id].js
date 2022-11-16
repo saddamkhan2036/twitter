@@ -57,7 +57,7 @@ export default function PostPage({ newsResults, randomUsersResults }) {
               <ArrowLeftIcon className="h-5 " />
             </div>
             <h2 className="text-lg sm:text-xl font-bold cursor-pointer ">
-              Tweet
+              Post
             </h2>
           </div>
 

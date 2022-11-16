@@ -16,12 +16,12 @@ export default function Sidebar() {
   const { data: session } = useSession();
   return (
     <div className="hidden sm:flex flex-col p-2 xl:items-start fixed h-full xl:ml-24 ">
-      {/* Twitter Logo */}
-      <div className="hoverEffects p-0  hover:bg-blue-100 xl:px-1">
+      {/* Logo */}
+      <div className=" p-0  xl:px-1">
         <Image
-          width="50"
-          height="50"
-          src="https://www.freepnglogos.com/uploads/twitter-logo-png/twitter-logo-vector-png-clipart-1.png"
+          width="120"
+          height="150"
+          src="https://cdn4.vectorstock.com/i/thumb-large/65/03/letter-p-blue-icon-logo-concept-design-vector-24016503.jpg"
         ></Image>
       </div>
       {/* Menu */}

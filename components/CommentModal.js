@@ -85,7 +85,7 @@ export default function CommentModal() {
                   <textarea
                     className="w-full border-none focus:ring-0 text-lg placeholder-gray-700 tracking-wide min-h-[50px] text-gray-700 "
                     rows="2"
-                    placeholder="Tweet your reply"
+                    placeholder="post your reply"
                     value={input}
                     onChange={(e) => setInput(e.target.value)}
                   ></textarea>
