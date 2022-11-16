@@ -42,10 +42,6 @@ export default function Sidebar() {
       {/* Button */}
       {session ? (
         <>
-          <button className="bg-blue-400 text-white rounded-full w-56 h-12 font-bold shadow-md hover:brightness-95 text-lg hidden xl:inline ">
-            Tweet
-          </button>
-          <button onClick={signOut} className=" mt-5 bg-blue-400 text-white rounded-full w-56 h-12 font-bold shadow-md hover:brightness-95 text-lg hidden xl:inline">Sign Out</button>
           <div className="hoverEffects text-gray-700 flex items-center justify-center xl:justify-start mt-auto">
             <img
               className="h-10 w-10 rounded-full xl:mr-2"
@@ -59,7 +55,7 @@ export default function Sidebar() {
           </div>
         </>
       ) : (
-        <button onClick={signIn} className="bg-blue-400 text-white rounded-full w-36 h-12 font-bold shadow-md hover:brightness-95 text-lg hidden xl:inline ">Sign In</button>
+          <></>
       )}
     </div>
   );
