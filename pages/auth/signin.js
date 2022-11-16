@@ -12,7 +12,7 @@ export default function signin({ providers }) {
           <div key={provider.name}  className="flex flex-col items-center">
             <img
               className="w-36 object-cover"
-              src="https://cdn4.vectorstock.com/i/thumb-large/65/03/letter-p-blue-icon-logo-concept-design-vector-24016503.jpg"
+              src="https://i.pinimg.com/originals/4f/f4/09/4ff40958bc4d78882c0d44be38753f14.jpg"
               alt="Post logo"
             />
             <p className="text-center text-sm italic my-10">

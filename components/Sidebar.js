@@ -19,9 +19,9 @@ export default function Sidebar() {
       {/* Logo */}
       <div className=" p-0  xl:px-1">
         <Image
-          width="120"
-          height="150"
-          src="https://cdn4.vectorstock.com/i/thumb-large/65/03/letter-p-blue-icon-logo-concept-design-vector-24016503.jpg"
+          width="150"
+          height="120"
+          src="https://i.pinimg.com/originals/4f/f4/09/4ff40958bc4d78882c0d44be38753f14.jpg"
         ></Image>
       </div>
       {/* Menu */}
